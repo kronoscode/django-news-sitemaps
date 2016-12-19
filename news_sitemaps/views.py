@@ -8,6 +8,7 @@ from django.core.paginator import EmptyPage, PageNotAnInteger
 
 from .settings import LANG, NAME, TZ
 
+
 def index(request, sitemaps):
     """
     View to create a sitemap index listing other sitemaps
@@ -27,6 +28,7 @@ def index(request, sitemaps):
                 sites.append('%s://%s%s?p=%s' % (protocol, current_site.domain, sitemap_url, page))
     xml = loader.render_to_string('sitemaps/index.xml', {'sitemaps': sites})
     return HttpResponse(xml, content_type='application/xml')
+
 
 def news_sitemap(request, sitemaps, section=None):
     """
