@@ -6,7 +6,7 @@ setup(
     description = 'Generates sitemaps compatible with the Google News schema',
     author = 'TWT Web Devs',
     author_email = 'webdev@washingtontimes.com',
-    url = 'http://github.com/washingtontimes/django-news-sitemaps/',
+    url = 'https://github.com/washingtontimes/django-news-sitemaps/',
     include_package_data = True,
     packages = find_packages(),
     classifiers = [

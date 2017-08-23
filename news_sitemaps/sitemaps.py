@@ -74,7 +74,7 @@ class NewsSitemap(Sitemap):
                 lastmod = lastmod.replace(microsecond=0)
 
             yield {
-                'location':     "http://%s%s" % (domain, get('location', item)),
+                'location':     "https://%s%s" % (domain, get('location', item)),
                 'lastmod':      lastmod,
                 'changefreq':   get('changefreq', item, None),
                 'priority':     get('priority', item, None),
