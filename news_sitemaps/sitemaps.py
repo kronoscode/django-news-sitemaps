@@ -72,9 +72,12 @@ class NewsSitemap(Sitemap):
             lastmod = get('lastmod', item, None)
             if isinstance(lastmod, datetime.time) or isinstance(lastmod, datetime.datetime):
                 lastmod = lastmod.replace(microsecond=0)
-
+            if self.protocol:
+                protocol = self.protocol
+            else:
+                protocol = 'http'
             yield {
-                'location':     "http://%s%s" % (domain, get('location', item)),
+                'location':     "%s://%s%s" % (protocol ,domain, get('location', item)),
                 'lastmod':      lastmod,
                 'changefreq':   get('changefreq', item, None),
                 'priority':     get('priority', item, None),
